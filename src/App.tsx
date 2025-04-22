@@ -1,64 +1,15 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram, Apple as WhatsApp, Search, Menu, Car, PenTool as Tool, Shield, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Apple as WhatsApp, PenTool as Tool, Shield, Clock } from 'lucide-react';
+import HeaderImport from './HeaderImport'; // Importa el componente HeaderImport
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-black text-white">
-        <div className="container mx-auto px-4">
-          {/* Top Bar */}
-          <div className="hidden md:flex justify-between py-2 text-sm border-b border-gray-800">
-            <div className="flex gap-6">
-              <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-red-500 transition-colors">
-                <Phone size={16} />
-                <span>+1 (234) 567-890</span>
-              </a>
-              <a href="mailto:info@importadorachambs.com" className="flex items-center gap-2 hover:text-red-500 transition-colors">
-                <Mail size={16} />
-                <span>info@importadorachambs.com</span>
-              </a>
-            </div>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-red-500 transition-colors"><Facebook size={16} /></a>
-              <a href="#" className="hover:text-red-500 transition-colors"><Instagram size={16} /></a>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
-                <WhatsApp size={16} />
-              </a>
-            </div>
-          </div>
-          
-          {/* Main Navigation */}
-          <nav className="py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Car size={32} className="text-red-600" />
-                <span className="text-2xl font-bold">Importadora Chambs</span>
-              </div>
-              
-              <div className="hidden md:flex items-center gap-8">
-                <a href="#" className="hover:text-red-500 transition-colors">Inicio</a>
-                <a href="#" className="hover:text-red-500 transition-colors">Productos</a>
-                <a href="#" className="hover:text-red-500 transition-colors">Servicios</a>
-                <a href="#" className="hover:text-red-500 transition-colors">Nosotros</a>
-                <a href="#" className="hover:text-red-500 transition-colors">Contacto</a>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <button className="p-2 hover:bg-red-600 hover:text-white rounded-full transition-colors">
-                  <Search size={20} />
-                </button>
-                <button className="md:hidden p-2 hover:bg-red-600 hover:text-white rounded-full transition-colors">
-                  <Menu size={20} />
-                </button>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <HeaderImport />
 
       {/* Hero Section */}
-      <section className="relative h-[600px] bg-cover bg-center" style={{
+      <section className="relative h-[600px] bg-cover bg-center pt-16" style={{
         backgroundImage: 'url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80")'
       }}>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -75,12 +26,14 @@ function App() {
 
       {/* Features */}
       <section className="py-16 bg-gray-50">
+        
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6 hover:bg-white hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-red-100 rounded-none flex items-center justify-center mx-auto mb-4">
                 <Tool className="text-red-600" size={32} />
               </div>
+              
               <h3 className="text-xl font-semibold mb-2">Calidad Premium</h3>
               <p className="text-gray-600">Importamos solo repuestos originales y de alta calidad de fabricantes certificados.</p>
             </div>
@@ -178,7 +131,12 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Car size={24} className="text-red-600" />
+              <div className="text-red-600">
+                {/* Reutilizo el HeaderImport para mostrar cómo llamarlo en otras partes */}
+                {/* <HeaderImport /> */}
+                {/* O puedes simplemente usar el icono del carro */}
+                <WhatsApp size={24} className="text-red-600" />
+              </div>
               <span className="text-white font-bold">Importadora Chambs</span>
             </div>
             <div className="flex gap-4">
